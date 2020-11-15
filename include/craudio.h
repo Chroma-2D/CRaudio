@@ -5,6 +5,10 @@
 #include "vorbis/vorbisfile.h"
 #include "AL/al.h"
 
+#ifdef __cplusplus
+extern("C") {
+#endif
+    
 #ifndef CR_API
  #if defined CR_STATIC
   #define CR_API
@@ -45,4 +49,8 @@ CR_API CRbool CR_APIENTRY CR_LoadOgg(const char* path, CRaudio_LoadInfo* info);
 CR_API CRbool CR_APIENTRY CR_FreeOgg(CRaudio_LoadInfo* info);
 CR_API CRerror CR_APIENTRY CR_GetError(void);
 
-#endif CRAUDIO_H_
+#ifdef __cplusplus
+}
+#endif
+    
+#endif
