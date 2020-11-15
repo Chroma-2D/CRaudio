@@ -1,5 +1,6 @@
 ### What
-CRaudio is a low level audio library for used by Chroma Framework.  
+CRaudio is a low level audio library used by Chroma Framework.  
+
 This library might work with other projects I suppose, but there's no way in hell I'm going to help you with that.
 
 ### Why
