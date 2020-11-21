@@ -25,6 +25,9 @@ extern("C") {
  #define CR_APIENTRY
 #endif
 
+#define CR_MODPLUG_CHUNKSIZE 512
+#define CR_MODPLUG_SAMPLERATE 48000
+
 #define CR_FALSE 0
 #define CR_TRUE 1
 
@@ -34,6 +37,7 @@ extern("C") {
 #define CR_ERROR_INVALID_POINTER          0xA002
 #define CR_ERROR_OGGVORBIS_STREAM_INVALID 0xA010
 #define CR_ERROR_OGGVORBIS_FILE_CORRUPT   0xA011
+#define CR_ERROR_MODPLUG_FILE_CORRUPT     0xA020
 
 typedef int CRerror;
 typedef char CRbool;
@@ -46,7 +50,9 @@ typedef struct CRaudio_LoadInfo {
 } CRaudio_LoadInfo;
 
 CR_API CRbool CR_APIENTRY CR_LoadOgg(const char* path, CRaudio_LoadInfo* info);
-CR_API CRbool CR_APIENTRY CR_FreeOgg(CRaudio_LoadInfo* info);
+CR_API CRbool CR_APIENTRY CR_LoadTrackerModule(const char* path, CRaudio_LoadInfo* info);
+
+CR_API CRbool CR_APIENTRY CR_Free(CRaudio_LoadInfo* info);
 CR_API CRerror CR_APIENTRY CR_GetError(void);
 
 #ifdef __cplusplus

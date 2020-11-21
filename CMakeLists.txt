@@ -11,6 +11,7 @@ endif(WIN32)
 
 include_directories(include)
 
+add_definitions("-DMODPLUG_STATIC")
 add_definitions("-Wall -pedantic")
 if(NOT WIN32)
     add_definitions("-fPIC")

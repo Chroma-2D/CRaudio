@@ -13,15 +13,10 @@ set(CRaudio_LIBS
     vorbis
     vorbisenc
     vorbisfile
+    modplug
 )
-    
-if(MSVC)
-    set(OUTPUT_DIR CRaudio-VS)
-elseif(MINGW)
-    set(OUTPUT_DIR CRaudio-MINGW)
-else()
-    set(OUTPUT_DIR CRaudio)
-endif()
+
+set(OUTPUT_DIR CRaudio)
 
 file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/${OUTPUT_DIR})
 file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/${OUTPUT_DIR}/bin)
